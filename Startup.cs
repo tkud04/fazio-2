@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ass_2.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace ass_2
 {
@@ -29,8 +31,11 @@ namespace ass_2
             services.AddControllersWithViews();
 			
 			services.AddSingleton<IHelper, Helper>();
-                
-            /**
+
+            services.AddDbContext<ass_2Context>(options =>
+			{
+			      var connectionString = Configuration.GetConnectionString("ass_2Context");
+               
             if (Environment.IsDevelopment())
             {
                 options.UseSqlite(connectionString);
@@ -39,9 +44,10 @@ namespace ass_2
             {
                 options.UseSqlServer(connectionString);
             }
-
-			options.UseSqlServer(connectionString); 
-            **/
+            
+			});
+                
+           
                     
                 
         }
