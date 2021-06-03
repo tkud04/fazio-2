@@ -1,25 +1,15 @@
 # Dockerfile
 
-FROM mcr.microsoft.com/dotnet/core/sdk:5.0 AS build-env
+FROM microsoft/dotnet:latest
+
+COPY . /app
+
 WORKDIR /app
 
-# Copy csproj and restore as distinct layers
-COPY *.csproj ./
-RUN dotnet restore
+RUN ["dotnet", "restore"]
 
-# Copy everything else and build
-COPY . .
-RUN dotnet publish -c Release -o out
+RUN ["dotnet", "build"]
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
-WORKDIR /app
-COPY --from=build-env /app/out .
+EXPOSE 5000/tcp
 
-# Run the app on container startup
-# Use your project name for the second parameter
-# e.g. MyProject.dll
-ENTRYPOINT [ "dotnet", "ass_2.dll" ]
-
-# Use the following instead for Heroku
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet HerokuApp.dll
+CMD ["dotnet", "run", "--server.urls", "http://*:5000"]
