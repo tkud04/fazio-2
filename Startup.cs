@@ -30,8 +30,6 @@ namespace ass_2
 			
 			services.AddSingleton<IHelper, Helper>();
                 
-                 services.addDbContext<ass_2Context>(options => {
-                   var connectionString = Configuration.GetConnectionString("ass_2Context");
             /**
             if (Environment.IsDevelopment())
             {
@@ -41,9 +39,10 @@ namespace ass_2
             {
                 options.UseSqlServer(connectionString);
             }
+
+			options.UseSqlServer(connectionString); 
             **/
-                     options.UseSqlServer(connectionString); 
-                 });
+                    
                 
         }
 
