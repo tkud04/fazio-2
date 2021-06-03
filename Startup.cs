@@ -38,7 +38,7 @@ namespace ass_2
                
             if (Environment.IsDevelopment())
             {
-                options.UseSqlite(connectionString);
+                options.UseSqlite(@"Data Source=c:\dotnet\databases\ass-2.db");
             }
             else
             {
