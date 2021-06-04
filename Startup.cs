@@ -39,11 +39,12 @@ namespace ass_2
                
             if (Environment.IsDevelopment())
             {
-                options.UseSqlite(@"Data Source=c:\dotnet\databases\ass-2.db");
+                options.UseSqlite(@"Data Source=databases\ass-2.db");
             }
             else
             {
-                options.UseSqlServer(connectionString);
+                //options.UseSqlServer(connectionString);
+				options.UseSqlite(@"Data Source=databases\ass-2.db");
             }
             
 			});
