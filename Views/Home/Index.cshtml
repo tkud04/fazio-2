@@ -46,13 +46,14 @@
           <div class="col-12  block-13">
             <div class="owl-carousel nonloop-block-13">
               @foreach (var item in Model) {
+			  string img = "images/products/" + @item.Sku + ".jpg";
+			
               <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="img d-block" style="background-image: url('@img')"></a>
                 <div class="lh-content">
-                  <span class="category">Cars &amp; Vehicles</span>
+                  <span class="category">Shirts</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Red Luxury Car</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
+                  <h3><a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a></h3>
                   <p class="mb-0">
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
