@@ -53,9 +53,7 @@
                 <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li><a asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
-                
-                <li class="ml-xl-3 login"><a href="javascript:void(0)"><span class="border-left pl-xl-4"></span>Log In</a></li>
-                <li><a href="javascript:void(0)">Register</a></li>
+                 <partial name="_LoginPartial" />
 
                  </ul>
             </nav>
@@ -69,7 +67,13 @@
         </div>
 
     </header>
-    @RenderSection("banner", required: true)
+	@if((string)ViewData["home"] == "yes"){
+	  <partial name="_HomeBannerPartial" />
+	}
+	else{
+	   <partial name="_GenericBannerPartial" />
+	}
+    
             @RenderBody()
 			
 	<div class="newsletter bg-primary py-5">

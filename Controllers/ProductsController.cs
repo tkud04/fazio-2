@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using ass_2.Models;
+using ass_2.Data;
 using ass_2.Helpers;
 
 namespace ass_2.Controllers

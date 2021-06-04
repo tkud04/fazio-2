@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ass_2.Helpers;
 using Microsoft.EntityFrameworkCore;
+using ass_2.Data;
 
 namespace ass_2
 {
@@ -70,13 +71,15 @@ namespace ass_2
 
             app.UseRouting();
 
-            app.UseAuthorization();
+             app.UseAuthentication();
+        app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+				endpoints.MapRazorPages();
             });
         }
     }

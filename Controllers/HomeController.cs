@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using ass_2.Models;
+using ass_2.Data;
 using ass_2.Helpers;
 
 namespace ass_2.Controllers
@@ -24,9 +25,9 @@ namespace ass_2.Controllers
 			_context = context;
         }
 
-        public IActionResult Index()
+         public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Product.ToListAsync());
         }
 
         public IActionResult Privacy()

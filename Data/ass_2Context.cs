@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ass_2.Models;
 
+namespace ass_2.Data
+{
     public class ass_2Context : DbContext
     {
         public ass_2Context (DbContextOptions<ass_2Context> options)
@@ -14,3 +16,4 @@ using ass_2.Models;
 
         public DbSet<ass_2.Models.Product> Product { get; set; }
     }
+}
