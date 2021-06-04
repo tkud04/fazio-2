@@ -121,7 +121,8 @@ namespace ass_2.Controllers
             }
             return View(product);
         }
-
+		
+		
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

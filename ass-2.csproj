@@ -21,10 +21,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.2" />
   </ItemGroup>
-  
-  <Target Name="PrePublishTarget" AfterTargets="Publish">
-    <Exec Command="dotnet ef database update --context=ass_2Context" />
-    <Exec Command="dotnet ef database update --context=IdentityDataContext" />
-  </Target>
+
 
 </Project>

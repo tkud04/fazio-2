@@ -12,24 +12,24 @@
         <div class="overlap-category mb-5">
           <div class="row align-items-stretch no-gutters">
             <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
+              <a href="javascript:void(0)"class="popular-category h-100">
                 <span class="caption mb-2 d-block">T-shirts</span>
               </a>
             </div>
 			<div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
+              <a href="javascript:void(0)"class="popular-category h-100">
                 <span class="caption mb-2 d-block">Jeans</span>
               </a>
             </div><div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
+              <a href="javascript:void(0)"class="popular-category h-100">
                 <span class="caption mb-2 d-block">Blouses</span>
               </a>
             </div><div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
+              <a href="javascript:void(0)"class="popular-category h-100">
                 <span class="caption mb-2 d-block">Hoodies</span>
               </a>
             </div><div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
-              <a href="#" class="popular-category h-100">
+              <a href="javascript:void(0)"class="popular-category h-100">
                 <span class="caption mb-2 d-block">Jackets</span>
               </a>
             </div>
@@ -52,8 +52,8 @@
                 <a asp-action="Details" asp-route-id="@item.Id" class="img d-block" style="background-image: url('@img')"></a>
                 <div class="lh-content">
                   <span class="category">Shirts</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a></h3>
+                  <a asp-controller="Home" asp-action="AddToBag" asp-route-id="@item.Id" class="bookmark"><span><i class="fa fa-bag"></i></span></a>
+                  <h3><a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a></h3>
                   <p class="mb-0">
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>

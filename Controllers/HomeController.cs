@@ -34,6 +34,25 @@ namespace ass_2.Controllers
         {
             return View();
         }
+		
+		 // GET: Products/AddToBag/5
+        public async Task<IActionResult> AddToBag(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
