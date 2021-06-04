@@ -23,7 +23,8 @@
   </ItemGroup>
   
   <Target Name="PrePublishTarget" AfterTargets="Publish">
-    <Exec Command="dotnet ef database update" />
+    <Exec Command="dotnet ef database update --context=ass_2Context" />
+    <Exec Command="dotnet ef database update --context=IdentityDataContext" />
   </Target>
 
 </Project>
