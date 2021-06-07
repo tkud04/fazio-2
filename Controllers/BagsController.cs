@@ -50,11 +50,11 @@ namespace ass_2.Controllers
         }
 
 		// GET: Bags/Add
-        public async Task<IActionResult> Add(string sku,int qty)
+        public async Task<IActionResult> Add(string sku)
         {
 			Bag bag = new Bag();
 			bag.Sku = sku;
-			bag.qty = qty;
+			bag.Quantity = 1;
             _context.Add(bag);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
