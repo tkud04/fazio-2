@@ -44,7 +44,7 @@ namespace ass_2
             else
             {
                 //options.UseSqlServer(connectionString);
-				options.UseSqlite(@"Data Source=app\databases\ass-2.db");
+				options.UseSqlite(@"Data Source=app\heroku_output\databases\ass-2.db");
             }
             
 			});
