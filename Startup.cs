@@ -43,8 +43,8 @@ namespace ass_2
             }
             else
             {
-                //options.UseSqlServer(connectionString);
-				options.UseSqlite(@"Data Source=databases\ass-2.db");
+                options.UseSqlServer(connectionString);
+				//options.UseSqlite(@"Data Source=databases\ass-2.db");
             }
             
 			});
