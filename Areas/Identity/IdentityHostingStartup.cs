@@ -17,8 +17,8 @@ namespace ass_2.Areas.Identity
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<IdentityDataContext>(options =>
 				{
-                    options.UseSqlServer(context.Configuration.GetConnectionString("IdentityDataContextConnection"));
-					//options.UseSqlite(@"Data Source=databases\ass-2.db");
+                  //  options.UseSqlServer(context.Configuration.GetConnectionString("IdentityDataContextConnection"));
+					options.UseSqlite(@"Data Source=app\databases\ass-2.db");
 				});
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
