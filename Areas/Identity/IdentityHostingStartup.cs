@@ -18,7 +18,7 @@ namespace ass_2.Areas.Identity
                 services.AddDbContext<IdentityDataContext>(options =>
 				{
                   //  options.UseSqlServer(context.Configuration.GetConnectionString("IdentityDataContextConnection"));
-					options.UseSqlite(@"Data Source=app\databases\ass-2.db");
+					options.UseSqlite(@"Data Source=app\heroku_output\databases\ass-2.db");
 				});
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
