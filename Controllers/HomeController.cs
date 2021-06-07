@@ -5,10 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ass_2.Models;
 using ass_2.Data;
 using ass_2.Helpers;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ass_2.Controllers
 {
@@ -35,24 +38,18 @@ namespace ass_2.Controllers
             return View();
         }
 		
-		 // GET: Products/AddToBag/5
-        public async Task<IActionResult> AddToBag(int? id)
+		        // GET: Cart
+				/**8
+		[Authorize]
+        public async Task<IActionResult> Cart()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
+	         var user = User.Identity.Name;
+			 var bag = await _context.Bag
+                .FindAsync(b => b.Username == user);
+            return View(bag);
+			
         }
-
+		**/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

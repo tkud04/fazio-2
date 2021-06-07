@@ -15,5 +15,7 @@ namespace ass_2.Data
         }
 
         public DbSet<ass_2.Models.Product> Product { get; set; }
+
+        public DbSet<ass_2.Models.Bag> Bag { get; set; }
     }
 }
